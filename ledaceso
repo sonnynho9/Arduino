@@ -1,0 +1,19 @@
+/*Declarando a váriavel Led, na porta 13 */
+
+int led = 13; //Led na Porta 13
+
+void setup() { //Configurando a saída do Led
+
+
+pinMode(led, OUTPUT);
+}
+
+void loop() {
+
+digitalWrite(led, HIGH); //Led Aceso
+delay (100); //Durante 100 milisegundos
+digitalWrite(led, LOW); //Led Apagado
+delay (100); //Durante 100 milisegundos
+
+
+}
