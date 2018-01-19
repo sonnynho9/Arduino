@@ -1,5 +1,5 @@
 /*Tocando a marcha do Star Wars com buzzer e um led */
-
+/*Código encontrado no google*/
 int speakerPin = 11; //Buzzer na porta 11
 
 int ledPin = 13; //Led no porta 13
