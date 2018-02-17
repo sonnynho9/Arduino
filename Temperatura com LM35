@@ -1,0 +1,40 @@
+//Sensor de temperatura com LCD 26x2
+//Elaborado por Edival Gonçalves (sonnynho9)
+
+#include "LiquidCrystal.h" //Importa a biblioteca do LCD 16x2
+
+int Ventrada; //Variavel que armazenará o Valor do LM35
+const int LM35 = A0; //Pino analógico que lerá a saída do LM35
+float Temperatura; //Varíavel irá ser mostrada apos os calculos de temperatura
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2); //Pinos que o LCD 16x2 usará
+
+
+void setup() {
+  //Define o numero de colunas e linhas do LCD
+  lcd.begin(16, 2);
+
+}
+void loop() {
+  Ventrada = analogRead (LM35);
+  Temperatura = Ventrada * 0.1075268817204301; //Lê o valor do sensor e armazena na variavél Temperatura
+  delay(9000);
+
+  if (Temperatura > 20)
+  {
+    lcd.setCursor(3, 0);
+    lcd.print(Temperatura);
+    lcd.print("C");
+    lcd.setCursor(3, 1);
+    lcd.print("Tempo agradável");
+  }
+
+  else (Temperatura < 20);
+  {
+    lcd.setCursor(3, 0);
+    lcd.print(Temperatura);
+    lcd.print("C");
+    lcd.setCursor(3, 1);
+    lcd.print("Que frio da porra.");
+  }
+
+}
