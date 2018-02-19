@@ -3,7 +3,7 @@
 
 #include "LiquidCrystal.h" //Importa a biblioteca do LCD 16x2
 
-int Ventrada; //Variavel que armazenará o Valor do LM35
+int Tentrada; //Variavel que armazenará o Valor do LM35
 const int LM35 = A0; //Pino analógico que lerá a saída do LM35
 float Temperatura; //Varíavel irá ser mostrada apos os calculos de temperatura
 LiquidCrystal lcd(12, 11, 5, 4, 3, 2); //Pinos que o LCD 16x2 usará
