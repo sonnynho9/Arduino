@@ -5,27 +5,57 @@
     <meta charset="utf-8" />
     <title>Controlando a temperatura </title>
 </head>
+<script>
+    function timer() {
+        var date = new Date();
+        var seconds = date.getSeconds();
+        var minutes = date.getMinutes();
+        var hours = date.getHours()
+
+        if (seconds < 10) {
+            seconds = '0' + seconds;
+        }
+
+        if (minutes < 10) {
+            minutes = '0' + minutes;
+        }
+
+        if (hours < 10) {
+            hours = '0' + hours;
+        }
+
+        document.getElementById('date').innerHTML = hours + ':' + minutes + ':' + seconds;
+
+        setTimeout('timer()', 1000);
+    }
+</script>
+
 <style>
     body {
         background-color: #00ffff;
     }
 
-            h1 {
-                color: black;
-                    text-align: center;
-                    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-            }
+    h1 {
+        color: black;
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    }
 
-                            h2 {
-                                color: darkblue;
-                                text-align: left;
-                                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                            }
-                                        p {
-                                            color: black;
-                                            text-align:left-center;
-                                            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                                        }
+    h2 {
+        color: darkblue;
+        text-align: left;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    p {
+        color: black;
+        text-align: left-center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+} 
+
+    }
+
 
     h3
 </style>
@@ -34,99 +64,20 @@
 
 <body>
     <h1>Controle de temperatura e umidade by Edival </h1>
-    <h2>Temperatura</h2>
-    <p>Aqui você pode ver a temperatura as <time>19-04-2018</time> </p>
+
+    <body onLoad="timer()">
+        <p> A Temperatura as <label id="date"> </label> é </p>
+    </body>
+
+
+
 
 
 </body>
     
- 
-<script type="text/javascript" language="JavaScript">// Função que monta Mês, Dia, e Ano para exibir no HTML
-	// Declaração de Variaveis que receberam os valores:
 
-	var now = new Date();
-	var hours = now.getHours();
-	var minutes = now.getMinutes();
-	var timeValue = "" + ((hours >12) ? hours -12 :hours)
+  
 
-	//Tratamento quantidade de Digitos nos Minutos e exibi se é
-	// dia ou noite, PM, AM.
-
-	timeValue += ((minutes < 10) ? ":0" : ":") + minutes
-	timeValue += (hours >= 12) ? " PM" : " AM"
-	timerRunning = true;
-	mydate = new Date();
-	myday = mydate.getDay();
-	mymonth = mydate.getMonth();
-	myweekday = mydate.getDate();
-	weekday = myweekday;
-	myyear = mydate.getYear();
-	year = myyear;
-
-	// Tratamento dos Dias da Semana
-
-	if(myday == 0)
-		day = " Domingo, "
-
-	else if(myday == 1)
-		day = " Segunda Feira, "
-
-	else if(myday == 2)
-		day = " Terça Feira, "
-
-	else if(myday == 3)
-		day = " Quarta Feira, "
-
-	else if(myday == 4)
-		day = " Quinta Feira, "
-
-	else if(myday == 5)
-		day = " Sexta Feira, "
-
-	else if(myday == 6)
-		day = " Sábado, "
-
-	//Tratamento dos Meses
-
-	if(mymonth == 0)
-		month = " de Janeiro de "
-
-	else if(mymonth ==1)
-		month = " de Fevereiro de "
-
-	else if(mymonth ==2)
-		month = " de Março de "
-
-	else if(mymonth ==3)
-		month = " de Abril de "
-
-	else if(mymonth ==4)
-		month = " de Maio de "
-
-	else if(mymonth ==5)
-		month = " de Junho de "
-
-	else if(mymonth ==6)
-		month = " de Julho de "
-
-	else if(mymonth ==7)
-		month = " de Agosto de "
-
-	else if(mymonth ==8)
-		month = " de Setembro de "
-
-	else if(mymonth ==9)
-		month = " de Outubro de "
-
-	else if(mymonth ==10)
-		month = " de Novembro de "
-
-	else if(mymonth ==11)
-		month = " de Dezembro de "
-
-	//Exibe na Pagina o Resultado concatenando(+) os valores
-
-	document.write( day + myweekday + month + year + " - " + timeValue);</script>
 
 
 
